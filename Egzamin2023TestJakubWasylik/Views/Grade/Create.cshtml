@@ -1,0 +1,33 @@
+﻿@model Egzamin2023TestJakubWasylik.Models.Grade
+
+<h1>Dodawanie ocen</h1>
+
+<form asp-controller="Grade" asp-action="AddGrade" method="post">
+    <div class="form-group">
+        <label for="Przedmiot">Przedmiot:</label>
+        <select class="form-control" id="Przedmiot" name="Przedmiot">
+            <option value="Matematyka">Matematyka</option>
+            <option value="Fizyka">Fizyka</option>
+            <option value="Chemia">Chemia</option>
+            <option value="Biologia">Biologia</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="NumerStudenta">Numer Studenta:</label>
+        <input type="number" class="form-control" id="NumerStudenta" name="NumerStudenta"required>
+    </div>
+    <div class="form-group">
+        <label for="ImieStudenta">Imie Studenta:</label>
+        <input type="text" class="form-control" id="ImieStudenta" name="ImieStudenta" required>
+    </div>
+    <div class="form-group">
+        <label for="Ocena">Ocena:</label>
+        <select class="form-control" id="Ocena" name="Ocena" required>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj Ocenę</button>
+</form>

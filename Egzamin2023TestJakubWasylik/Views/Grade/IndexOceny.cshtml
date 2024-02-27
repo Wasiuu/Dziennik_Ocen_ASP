@@ -1,0 +1,27 @@
+﻿@model List<Egzamin2023TestJakubWasylik.Models.Grade>
+
+<h1>Oceny</h1>
+
+@foreach (var subjectGroup in Model.GroupBy(g => g.Przedmiot))
+{
+    <h2>@subjectGroup.Key</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Numer Studenta</th>
+                <th>Ocena</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var grade in subjectGroup)
+            {
+                <tr class="@(grade.Ocena == 2 ? "text-danger" : (grade.Ocena == 5 ? "text-success" : ""))">
+                    <td><a asp-action="Student" asp-route-numerStudenta="@grade.NumerStudenta">@grade.NumerStudenta</a></td>
+                    <td>@grade.Ocena</td>
+                    <td>@grade.Data.ToString("yyyy-MM-dd")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

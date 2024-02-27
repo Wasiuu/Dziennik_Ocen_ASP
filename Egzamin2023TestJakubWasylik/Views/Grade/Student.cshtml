@@ -1,0 +1,24 @@
+﻿@model List<Egzamin2023TestJakubWasylik.Models.Grade>
+
+<h1>Oceny Studentów</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Przedmiot</th>
+            <th>Ocena</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var grade in Model)
+        {
+            <tr class="@(grade.Ocena == 2 ? "text-danger" : (grade.Ocena == 5 ? "text-success" : ""))">
+                <td>@grade.Przedmiot</td>
+                <td>@grade.Ocena</td>
+                <td>@grade.Data.ToString("yyyy-MM-dd")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
